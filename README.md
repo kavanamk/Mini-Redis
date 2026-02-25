@@ -1,4 +1,4 @@
-# ⚡ KVStore — In-Memory Key-Value Store in C++
+# In-Memory Key-Value Store in C++
 
 > A multithreaded, in-memory key-value store inspired by Redis.  
 > Built from scratch in C++17 with TCP networking, TTL expiration, and LRU eviction.
@@ -121,22 +121,6 @@ Open multiple terminals simultaneously — all clients are handled concurrently.
 
 ---
 
-## File Structure
-
-```
-kvstore/
-├── CMakeLists.txt
-├── include/
-│   ├── store.h          # KeyValueStore class — TTL, LRU, mutex
-│   └── server.h         # TCP server — parse, handle_client, setup_server
-├── src/
-│   ├── main.cpp         # Entry point
-│   ├── store.cpp        # KV store implementation
-│   └── server.cpp       # TCP server implementation
-└── tests/               # (coming soon)
-```
-
----
 
 ## Design Decisions
 
@@ -158,8 +142,8 @@ Simple and effective for a demo-scale server. Each client thread owns its own so
 
 ```
 Multiple clients reading simultaneously:
-  Thread A ──shared_lock──► GET "name"  ✅
-  Thread B ──shared_lock──► GET "age"   ✅  (both proceed)
+  Thread A ──shared_lock──► GET "name"  
+  Thread B ──shared_lock──► GET "age"     (both proceed)
 
 One client writing — blocks all readers:
   Thread A ──unique_lock──► SET "name" "bob"
