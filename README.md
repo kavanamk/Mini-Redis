@@ -118,7 +118,7 @@ EXISTS name
 ```
 
 Open multiple terminals simultaneously — all clients are handled concurrently.
-
+https://mini-redis--kavanamanvi.replit.app
 ---
 
 
@@ -149,6 +149,7 @@ One client writing — blocks all readers:
   Thread A ──unique_lock──► SET "name" "bob"
   Thread B ─────────────── WAITS until A releases lock
 ```
+<img width="352" height="524" alt="Screenshot 2026-02-25 at 2 41 24 PM" src="https://github.com/user-attachments/assets/00a1fa99-269e-4e4d-9f87-add66adafb86" />
 
 ---
 
